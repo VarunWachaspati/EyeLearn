@@ -96,7 +96,7 @@ def age_summary_write(age_count_dict):
 def analysis():
     #VERY MESSY DATA STRUCTURE, REFACTOR !
     category_count = {'simple_myopia_high':{'os':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0},'od':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0}},'simple_myopia_moderate':{'os':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0},'od':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0}},'simple_myopia_low':{'os':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0},'od':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0}},'simple_hyperopia_high':{'os':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0},'od':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0}},'simple_hyperopia_moderate':{'os':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0},'od':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0}},'simple_hyperopia_low':{'os':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0},'od':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0}},'simple_myopic_astigmatism':{'os':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0},'od':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0}},'simple_hypermetropic_astigmatism':{'os':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0},'od':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0}},'compound_myopic_astigmatism':{'os':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0},'od':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0}},'compound_hypermetropic_astigmatism':{'os':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0},'od':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0}},'mixed_astigmatism_postive_sph':{'os':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0},'od':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0}},'mixed_astigmatism_negative_sph':{'os':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0},'od':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0}},'normal':{'os':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0},'od':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0}},'undefined':{'os':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0},'od':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0}},'Insufficient Data':{'os':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0},'od':{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0}}}
-
+    zero_category_count = copy.deepcopy(category_count)
     first_category_count = copy.deepcopy(category_count)
     second_category_count = copy.deepcopy(category_count)
     third_category_count = copy.deepcopy(category_count)
@@ -114,7 +114,8 @@ def analysis():
         ws[["od_sph","od_cyl","os_sph","os_cyl"]] = ws[["od_sph","od_cyl","os_sph","os_cyl"]].convert_objects(convert_numeric=True).dropna()
         #ws = ws.dropna(subset=["od_sph","od_cyl","os_sph","os_cyl"])
         uid_list = list(pd.unique(ws.uid.ravel()))
-        print len(uid_list)
+        #print len(uid_list)
+        last_uid = 0
         for index, row in ws.iterrows():
             if row['uid'] in uid_list:
                 first_category_count = classify(first_category_count,row)
@@ -129,7 +130,9 @@ def analysis():
         uid_list = list(pd.unique(ws.uid.ravel()))
         for x in uid_list:
             rows = ws.loc[ws['uid']==x]
+            
             first_date = 0
+            zero_flag = False
             second_flag = False
             third_flag = False
             fourth_flag = False
@@ -150,9 +153,12 @@ def analysis():
                     elif (row['visit_date'] - first_date).days >=120 and (row['visit_date'] - first_date).days <240 and not second_flag:
                         second_category_count=classify(second_category_count,row)
                         second_flag= True
+                    elif (row['visit_date'] - first_date).days >0 and (row['visit_date'] - first_date).days <120 and not zero_flag:
+                        zero_category_count=classify(zero_category_count,row)
+                        zero_flag= True
 
 
-    return first_category_count,second_category_count,third_category_count,fourth_category_count,fifth_category_count
+    return first_category_count,zero_category_count,second_category_count,third_category_count,fourth_category_count,fifth_category_count
     
 def classify(category_count,row):
     #MERGE BOTH OS OD TO SINGLE ONE, BY ADDING A PARAMETER OS/OD
@@ -242,7 +248,7 @@ def classify(category_count,row):
         category_count['Insufficient Data']['od'][int(row['age'])] +=1    
     return category_count
             
-def analysis_write(first_category_count,second_category_count,third_category_count,fourth_category_count,fifth_category_count):
+def analysis_write(first_category_count,zero_category_count,second_category_count,third_category_count,fourth_category_count,fifth_category_count):
     workbook = load_workbook(filename = "LVPEI_Refractive_Error_Data_Colorized_Summarized.xlsx")
     new_ws = workbook.create_sheet()
     new_ws.title = "Categorical analysis"
@@ -252,6 +258,8 @@ def analysis_write(first_category_count,second_category_count,third_category_cou
     new_ws, rownum = format_write(new_ws,first_category_count,Label,rownum)
     Label = "4 Month Visit"
     new_ws, rownum = format_write(new_ws,second_category_count,Label,rownum)
+    Label = "Before 4 Month Visit"
+    new_ws, rownum = format_write(new_ws,zero_category_count,Label,rownum)
     Label = "8 Month Visit"
     new_ws, rownum = format_write(new_ws,third_category_count,Label,rownum)
     Label = "1 year Visit"
@@ -299,9 +307,9 @@ def format_write(new_ws,first_category_count,Label,rownum,colnum=1):
 def main():
     #age_count_dict = age_count_summary()
     #age_summary_write(age_count_dict)
-    first_category_count,second_category_count,third_category_count,fourth_category_count,fifth_category_count = analysis()
+    first_category_count,zero_category_count,second_category_count,third_category_count,fourth_category_count,fifth_category_count = analysis()
     #print first_category_count
-    analysis_write(first_category_count,second_category_count,third_category_count,fourth_category_count,fifth_category_count)
+    analysis_write(first_category_count,zero_category_count,second_category_count,third_category_count,fourth_category_count,fifth_category_count)
 
 if __name__ == '__main__':
     main()
