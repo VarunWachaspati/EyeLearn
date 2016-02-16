@@ -7,11 +7,20 @@ root_loc = "/home/varunwachaspati/LVPEI/"
 csv_loc = "/home/varunwachaspati/LVPEI/csv/"
 res_loc = "/home/varunwachaspati/LVPEI/result/"
 
+def make_unicode(input):
+    if type(input) != unicode:
+        input = unicode(input, "utf-8")
+        return input
+    else:
+        return input
+
 def generate():
     os.chdir(csv_loc)
     for fil in os.listdir(csv_loc):
         dat = pd.read_csv(fil,low_memory=False)
-        dat.sort_values(['uid','age'],ascending = True, kind='quicksort',inplace=True)
+        #print make_unicode('uid')
+        print dat
+        dat.sort_values(by=[u'uid',u'age'],ascending = True, kind='quicksort',inplace=True)
         dat.reset_index(drop=True,inplace=True)
         dat.to_csv(res_loc+fil,index=False,columns=['uid','visit_date','age','gender','od_sph','od_cyl','od_axis','od_ucva','od_bcva','os_sph','os_cyl','os_axis','os_ucva','os_bcva'])
 

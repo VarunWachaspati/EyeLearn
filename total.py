@@ -86,10 +86,10 @@ def contains_number(input_string):
     return any(char.isdigit() for char in input_string)
 
 def category_write(row):
-    od_sph = row[3].value
-    od_cyl = row[4].value
-    os_sph = row[8].value
-    os_cyl = row[9].value
+    od_sph = row[4].value
+    od_cyl = row[5].value
+    os_sph = row[9].value
+    os_cyl = row[10].value
     od_category = categorize(od_sph,od_cyl)
     os_category = categorize(os_sph,os_cyl)
     return od_category, os_category
@@ -98,14 +98,14 @@ def main():
     os.chdir(root_loc)
     workbook = load_workbook(filename = "LVPEI_Refractive_Error_Data.xlsx")
     for ws in workbook.worksheets:
-        ws['N1'] = "od_category"
-        ws['O1'] = "os_category"
+        ws['O1'] = "od_category"
+        ws['P1'] = "os_category"
         line = 2
         rows = list(ws.rows)[1:]
         for row in rows:
             od_category, os_category = category_write(row)
-            ws['N'+str(line)] = od_category
-            ws['O'+str(line)] = os_category
+            ws['O'+str(line)] = od_category
+            ws['P'+str(line)] = os_category
             line +=1
 
     workbook.save("LVPEI_Refractive_Error_Data.xlsx")
